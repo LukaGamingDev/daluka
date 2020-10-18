@@ -36,13 +36,15 @@ export default function App() {
         setSideBarVisible(visible => !visible)
     }
 
+    const containerClasses = [
+        'main-container',
+        'main-container--dark-theme',
+        sideBarVisible ? null : 'main-container--hide-sidebar'
+    ]
+
     return (
         <Router>
-            <div
-                className={
-                    `main-container ${!sideBarVisible && 'main-container--hide-sidebar'}`
-                }
-            >
+            <div className={containerClasses.join(' ')}>
                 <header className="main-header">
                     <div className="main-header__hamburger" onClick={handleHamburgerClick}>
                         <HamburgerMenu />

@@ -34,7 +34,7 @@ function Login() {
                 throw await res.json()
             }
 
-            history.push('/')
+            document.location.reload()
         } catch(e) {
             setError(e.message)
         }
@@ -47,12 +47,12 @@ function Login() {
                 <p className="error">{error}</p>
                 <form className="form" onSubmit={handleSubmit}>
                     <section className="form__section">
+                        <input type="email" id="email" ref={emailRef} required autoFocus />
                         <label htmlFor="email">Email</label>
-                        <input type="email" id="email" ref={emailRef} required />
                     </section>
                     <section className="form__section">
-                        <label htmlFor="password">Password</label>
                         <input type="password" id="password" ref={passwordRef} required />
+                        <label htmlFor="password">Password</label>
                     </section>
                     <button className="blue-button">Login</button>
                 </form>
