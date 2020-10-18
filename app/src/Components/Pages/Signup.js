@@ -15,7 +15,7 @@ function Signup() {
                         <label for="password">Password</label>
                         <input type="password" id="password" required />
                     </section>
-                    <button className="blue-button">Login</button>
+                    <button className="blue-button">Signup</button>
                 </form>
                 <p>Already have an Account? <Link to="/login">Login</Link></p>
             </div>

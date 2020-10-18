@@ -11,9 +11,8 @@ a {
 }
 
 #root, body, html, .main-container {
-    min-height: 100vh;
+    height: 100vh;
     margin: 0;
-    
 }
 
 body {
@@ -93,6 +92,7 @@ body {
     grid-row: 2;
     background-color: #f0f0f0;
     padding: 1rem;
+    overflow: auto;
 }
 
 .login {
@@ -131,6 +131,8 @@ body {
     border-radius: 4px;
     padding: 2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 23rem;
+    width: 95%;
 }
 
 .form {
@@ -145,7 +147,7 @@ body {
 
 input {
     padding: 0.7rem;
-    width: 17rem;
+    width: 100%;
     border: 1px black solid;
     border-radius: 4px;
 }

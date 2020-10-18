@@ -9,7 +9,7 @@ function Login() {
 
     const history = useHistory()
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault()
         
         const email = emailRef.current.value
@@ -17,26 +17,27 @@ function Login() {
 
         setError('')
 
-        fetch('/api/auth/login', {
-            headers: {
-                'Content-Type': 'application/json',
-                "Accepts": 'application.json'
-            },
-            method: 'post',
-            body: JSON.stringify({
-                email,
-                password
+        try {
+            const res = await fetch('/api/auth/login', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accepts': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    password
+                })
             })
-        })
-        .then(res => res.json())
-        .then(res => {
-          history.push('/')  
-        })
-        .catch(e => {
-            console.error(e)
-            setError('An error occurred')
-        })
-        
+
+            if (!res.ok) {
+                throw await res.json()
+            }
+
+            history.push('/')
+        } catch(e) {
+            setError(e.message)
+        }
     }
 
     return (
