@@ -1,13 +1,11 @@
 import React, {useRef, useState} from 'react'
-import {Link, useHistory} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 function Login() {
     const emailRef = useRef()
     const passwordRef = useRef()
 
     const [error, setError] = useState('')
-
-    const history = useHistory()
 
     async function handleSubmit(e) {
         e.preventDefault()
