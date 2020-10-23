@@ -15,6 +15,3 @@ Content-Type: application/json
     "email": "mail@mail.mail",
     "password": "best passwor in the world lol lol lol 1234"
 }
-
-# type here:
-###

@@ -38,7 +38,7 @@ export default function App() {
 
     const containerClasses = [
         'main-container',
-        'main-container--dark-theme',
+        'main-container--light-theme',
         sideBarVisible ? null : 'main-container--hide-sidebar'
     ]
 
